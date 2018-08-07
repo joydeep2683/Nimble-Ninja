@@ -17,6 +17,7 @@ class GameScene: SKScene {
     var movingGround : JBMovingGround!
     var hero : JBHero!
     var cloudGenerator : JBCloudGenerator!
+    var wallGenerator : JBWallGenerator!
     
     var isStarted = false
     
@@ -42,6 +43,12 @@ class GameScene: SKScene {
         cloudGenerator.populate(num: 7)
         cloudGenerator.startGeneratingWithSpawnTime(seconds: 7)
         
+        // Add wall generator
+        wallGenerator = JBWallGenerator(color: UIColor.clear, size: view.frame.size)
+        wallGenerator.position = view.center
+        addChild(wallGenerator)
+        
+        
     }
     
     func start(){
@@ -49,6 +56,7 @@ class GameScene: SKScene {
         hero.stop()
         hero.startRunning()
         movingGround.start()
+        wallGenerator.startGeneratingWallsEvery(seconds:  1.0)
     }
     
     
