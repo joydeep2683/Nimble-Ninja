@@ -7,20 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2603C13210C723A00009537 /* JBHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2603C12210C723A00009537 /* JBHero.swift */; };
+		A2B0FEFB21198E3300E796E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FEFA21198E3300E796E2 /* Constants.swift */; };
+		A2B0FEFD2119998A00E796E2 /* JBCloudGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FEFC2119998A00E796E2 /* JBCloudGenerator.swift */; };
+		A2B0FEFF21199CA000E796E2 /* JBCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FEFE21199CA000E796E2 /* JBCloud.swift */; };
 		A2C15629210A2879008AE780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15628210A2879008AE780 /* AppDelegate.swift */; };
-		A2C1562B210A2879008AE780 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2C1562A210A2879008AE780 /* GameScene.sks */; };
 		A2C1562D210A2879008AE780 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2C1562C210A2879008AE780 /* Actions.sks */; };
 		A2C1562F210A2879008AE780 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1562E210A2879008AE780 /* GameScene.swift */; };
 		A2C15631210A2879008AE780 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15630210A2879008AE780 /* GameViewController.swift */; };
 		A2C15634210A2879008AE780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C15632210A2879008AE780 /* Main.storyboard */; };
 		A2C15636210A287B008AE780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2C15635210A287B008AE780 /* Assets.xcassets */; };
 		A2C15639210A287B008AE780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C15637210A287B008AE780 /* LaunchScreen.storyboard */; };
+		A2CA1F6A210AB2F8004327E4 /* JBMovingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1F69210AB2F8004327E4 /* JBMovingGround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2603C12210C723A00009537 /* JBHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBHero.swift; sourceTree = "<group>"; };
+		A2B0FEFA21198E3300E796E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2B0FEFC2119998A00E796E2 /* JBCloudGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBCloudGenerator.swift; sourceTree = "<group>"; };
+		A2B0FEFE21199CA000E796E2 /* JBCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBCloud.swift; sourceTree = "<group>"; };
 		A2C15625210A2879008AE780 /* Nimble Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nimble Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C15628210A2879008AE780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2C1562A210A2879008AE780 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		A2C1562C210A2879008AE780 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		A2C1562E210A2879008AE780 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		A2C15630210A2879008AE780 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +35,7 @@
 		A2C15635210A287B008AE780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2C15638210A287B008AE780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2C1563A210A287B008AE780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CA1F69210AB2F8004327E4 /* JBMovingGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBMovingGround.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2B0FF0021199CA900E796E2 /* Cloud Generation */ = {
+			isa = PBXGroup;
+			children = (
+				A2B0FEFC2119998A00E796E2 /* JBCloudGenerator.swift */,
+				A2B0FEFE21199CA000E796E2 /* JBCloud.swift */,
+			);
+			path = "Cloud Generation";
+			sourceTree = "<group>";
+		};
 		A2C1561C210A2879008AE780 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				A2C15628210A2879008AE780 /* AppDelegate.swift */,
-				A2C1562A210A2879008AE780 /* GameScene.sks */,
 				A2C1562C210A2879008AE780 /* Actions.sks */,
 				A2C1562E210A2879008AE780 /* GameScene.swift */,
+				A2CA1F69210AB2F8004327E4 /* JBMovingGround.swift */,
+				A2B0FF0021199CA900E796E2 /* Cloud Generation */,
+				A2603C12210C723A00009537 /* JBHero.swift */,
+				A2B0FEFA21198E3300E796E2 /* Constants.swift */,
 				A2C15630210A2879008AE780 /* GameViewController.swift */,
 				A2C15632210A2879008AE780 /* Main.storyboard */,
 				A2C15635210A287B008AE780 /* Assets.xcassets */,
@@ -132,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C15634210A2879008AE780 /* Main.storyboard in Resources */,
-				A2C1562B210A2879008AE780 /* GameScene.sks in Resources */,
 				A2C15636210A287B008AE780 /* Assets.xcassets in Resources */,
 				A2C15639210A287B008AE780 /* LaunchScreen.storyboard in Resources */,
 				A2C1562D210A2879008AE780 /* Actions.sks in Resources */,
@@ -148,7 +167,12 @@
 			files = (
 				A2C1562F210A2879008AE780 /* GameScene.swift in Sources */,
 				A2C15631210A2879008AE780 /* GameViewController.swift in Sources */,
+				A2B0FEFD2119998A00E796E2 /* JBCloudGenerator.swift in Sources */,
+				A2B0FEFF21199CA000E796E2 /* JBCloud.swift in Sources */,
+				A2603C13210C723A00009537 /* JBHero.swift in Sources */,
+				A2CA1F6A210AB2F8004327E4 /* JBMovingGround.swift in Sources */,
 				A2C15629210A2879008AE780 /* AppDelegate.swift in Sources */,
+				A2B0FEFB21198E3300E796E2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
