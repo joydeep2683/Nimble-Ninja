@@ -25,7 +25,7 @@ class JBWall: SKSpriteNode {
     }
     
     func startMoving(){
-        let moveLeft = SKAction.moveBy(x: -300.0, y: 0.0, duration: 1.0)
+        let moveLeft = SKAction.moveBy(x: -KDefaultxToMovePerSecond, y: 0.0, duration: 1.0)
         run(SKAction.repeatForever(moveLeft))
     }
 }

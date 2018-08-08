@@ -49,6 +49,7 @@ class GameScene: SKScene {
         addChild(wallGenerator)
         
         
+        
     }
     
     func start(){

@@ -10,3 +10,4 @@ import Foundation
 import UIKit
 
 let KJBGroundHeight: CGFloat = 20.0
+let KDefaultxToMovePerSecond : CGFloat = 320.0
