@@ -31,4 +31,8 @@ class JBPointsLabel: SKLabelNode {
         number += 1
         text = "\(number)"
     }
+    func setTo(num: Int){
+        self.number = num
+        text = "\(self.number)"
+    }
 }
