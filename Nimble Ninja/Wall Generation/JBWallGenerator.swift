@@ -12,6 +12,7 @@ import SpriteKit
 class JBWallGenerator: SKSpriteNode {
     var generationTimer : Timer?
     var walls = [JBWall]()
+    var wallTracker = [JBWall]()
     
     func startGeneratingWallsEvery(seconds : TimeInterval){
         generationTimer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(self.generateWall), userInfo: nil, repeats: true)
@@ -35,6 +36,7 @@ class JBWallGenerator: SKSpriteNode {
         wall.position.x = size.width/2 + wall.size.width/2
         wall.position.y = scale*(KJBGroundHeight/2 + wall.size.height/2)
         walls.append(wall)
+        wallTracker.append(wall)
         addChild(wall)
     }
     
