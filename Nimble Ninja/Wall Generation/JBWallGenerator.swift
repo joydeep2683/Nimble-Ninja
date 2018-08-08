@@ -11,9 +11,14 @@ import SpriteKit
 
 class JBWallGenerator: SKSpriteNode {
     var generationTimer : Timer?
+    var walls = [JBWall]()
     
     func startGeneratingWallsEvery(seconds : TimeInterval){
         generationTimer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(self.generateWall), userInfo: nil, repeats: true)
+    }
+    
+    func stopGenerating(){
+        generationTimer?.invalidate()
     }
     
     @objc func generateWall(){
@@ -29,6 +34,14 @@ class JBWallGenerator: SKSpriteNode {
         let wall = JBWall()
         wall.position.x = size.width/2 + wall.size.width/2
         wall.position.y = scale*(KJBGroundHeight/2 + wall.size.height/2)
+        walls.append(wall)
         addChild(wall)
+    }
+    
+    func stopWalls(){
+        stopGenerating()
+        for wall in walls{
+            wall.stopMoving()
+        }
     }
 }

@@ -28,6 +28,11 @@ class JBCloudGenerator: SKSpriteNode {
     func startGeneratingWithSpawnTime(seconds: TimeInterval){
         generationTimer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(self.generateSingleCloud), userInfo: nil, repeats: true)
     }
+    
+    func stopGenerating(){
+        generationTimer.invalidate()
+    }
+    
     @objc func generateSingleCloud(){
         let x = size.width/2 + CLOUD_WIDTH/2
         let y = CGFloat(arc4random_uniform(UInt32(size.height))) - size.height/2

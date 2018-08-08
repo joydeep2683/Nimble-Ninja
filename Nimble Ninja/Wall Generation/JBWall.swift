@@ -15,9 +15,16 @@ class JBWall: SKSpriteNode {
     let WALL_COLOR = UIColor.brown
     
     init() {
-        super.init(texture: nil, color: WALL_COLOR, size: CGSize(width: WALL_WIDTH, height: WALL_HEIGHT))
-        
+        let size = CGSize(width: WALL_WIDTH, height: WALL_HEIGHT)
+        super.init(texture: nil, color: WALL_COLOR, size: size)
+        loadPhysicsBodyWithSize(size: size)
         startMoving()
+    }
+    
+    func loadPhysicsBodyWithSize(size : CGSize){
+        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody?.categoryBitMask = wallCategory
+        physicsBody?.affectedByGravity = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,5 +34,8 @@ class JBWall: SKSpriteNode {
     func startMoving(){
         let moveLeft = SKAction.moveBy(x: -KDefaultxToMovePerSecond, y: 0.0, duration: 1.0)
         run(SKAction.repeatForever(moveLeft))
+    }
+    func stopMoving(){
+        removeAllActions()
     }
 }

@@ -20,7 +20,15 @@ class JBHero: SKSpriteNode {
     
     
     init() {
-        super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 32, height: 44))
+        let size = CGSize(width: 32.0, height: 44.0)
+        super.init(texture: nil, color: UIColor.clear, size: size)
+        
+        loadAppearance()
+        loadPhysicsBodyWithSize(size: size)
+        
+    }
+    
+    func loadAppearance(){
         body = SKSpriteNode(color: UIColor.black, size: CGSize(width: self.frame.size.width, height: 40))
         body.position = CGPoint(x: 0.0, y: 2.0)
         addChild(body)
@@ -68,7 +76,13 @@ class JBHero: SKSpriteNode {
         rightFoot = leftFoot.copy() as! SKSpriteNode
         rightFoot.position.x = 8
         addChild(rightFoot)
-        
+    }
+    
+    func loadPhysicsBodyWithSize(size : CGSize){
+        physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody?.categoryBitMask = heroCategory
+        physicsBody?.contactTestBitMask = wallCategory
+        physicsBody?.affectedByGravity = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -125,6 +139,10 @@ class JBHero: SKSpriteNode {
     
     func stop(){
         body.removeAllActions()
+        arm.removeAllActions()
+        leftFoot.removeAllActions()
+        rightFoot.removeAllActions()
+        
     }
     
 }

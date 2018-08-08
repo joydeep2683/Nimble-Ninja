@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -20,6 +20,7 @@ class GameScene: SKScene {
     var wallGenerator : JBWallGenerator!
     
     var isStarted = false
+    var isGameOver = false
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.init(red: 159.0/255.0, green: 201.0/255.0, blue: 244.0/255.0, alpha: 1.0)
@@ -58,8 +59,13 @@ class GameScene: SKScene {
         tapToStartLabel.fontSize = 22.0
         addChild(tapToStartLabel)
         
+        // Add physics world
+        physicsWorld.contactDelegate = self
+        
         
     }
+    
+    // MARK: Game lifecycle
     
     func start(){
         isStarted = true
@@ -70,10 +76,36 @@ class GameScene: SKScene {
         movingGround.start()
         wallGenerator.startGeneratingWallsEvery(seconds:  1.0)
     }
+    func gameOver(){
+        isGameOver = true
+        
+        // stops everything
+        hero.physicsBody = nil
+        wallGenerator.stopWalls()
+        movingGround.stop()
+        hero.stop()
+        
+        // Create gameover label
+        let gameOverLabel = SKLabelNode(text: "Game Over.")
+        gameOverLabel.fontColor = UIColor.black
+        gameOverLabel.fontName = "Helvetica"
+        gameOverLabel.position.x = (view?.center.x)!
+        gameOverLabel.position.y = (view?.center.y)! + 40.0
+        gameOverLabel.fontSize = 22.0
+        addChild(gameOverLabel)
+    }
     
+    func restart(){
+        let newScene = GameScene(size: (view?.bounds.size)!)
+        newScene.scaleMode = .aspectFill
+        view?.presentScene(newScene)
+        cloudGenerator.stopGenerating()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !isStarted{
+        if isGameOver {
+            restart()
+        } else if !isStarted{
             start()
         } else {
             hero.flip()
@@ -84,5 +116,10 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         // Testing Git
+    }
+    
+    // MARK: SKPhysicsContactDelegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        gameOver()
     }
 }

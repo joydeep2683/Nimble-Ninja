@@ -9,5 +9,12 @@
 import Foundation
 import UIKit
 
+// Configuration
 let KJBGroundHeight: CGFloat = 20.0
 let KDefaultxToMovePerSecond : CGFloat = 320.0
+
+// Colission Detection
+
+let heroCategory : UInt32 = 0x1 << 0
+let wallCategory : UInt32 = 0x1 << 1
+

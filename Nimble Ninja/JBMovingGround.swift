@@ -46,4 +46,7 @@ class JBMovingGround : SKSpriteNode{
         run(SKAction.repeatForever(moveSequence))
     }
     
+    func stop(){
+        removeAllActions()
+    }
 }
