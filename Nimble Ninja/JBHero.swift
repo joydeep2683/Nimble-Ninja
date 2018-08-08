@@ -106,6 +106,14 @@ class JBHero: SKSpriteNode {
         
     }
     
+    func fall(){
+        physicsBody?.affectedByGravity = true
+        physicsBody?.applyImpulse(CGVector(dx: -5.0, dy: 15.0))
+        
+        let rotateBack = SKAction.rotate(byAngle: .pi/2, duration: 0.4)
+        run(rotateBack)
+    }
+    
     func startRunning(){
         let rotateBack = SKAction.rotate(byAngle: .pi/2, duration: 0.1)
         arm.run(rotateBack)

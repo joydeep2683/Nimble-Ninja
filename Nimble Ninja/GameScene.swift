@@ -73,6 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapToStartLabel.fontName = "Helvetica"
         tapToStartLabel.fontSize = 22.0
         addChild(tapToStartLabel)
+        tapToStartLabel.run(blinkAnimation())
     }
     
     func addPhysicsWorld(){
@@ -95,7 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         isGameOver = true
         
         // stops everything
-        hero.physicsBody = nil
+        hero.fall()
         wallGenerator.stopWalls()
         movingGround.stop()
         hero.stop()
@@ -108,6 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverLabel.position.y = (view?.center.y)! + 40.0
         gameOverLabel.fontSize = 22.0
         addChild(gameOverLabel)
+        gameOverLabel.run(blinkAnimation())
     }
     
     func restart(){
@@ -135,6 +137,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // MARK: SKPhysicsContactDelegate
     func didBegin(_ contact: SKPhysicsContact) {
-        gameOver()
+        if !isGameOver{
+            gameOver()
+        }
+    }
+    
+    // MARK: animation
+    func blinkAnimation() -> SKAction {
+        let duration = 0.4
+        let faadeOut = SKAction.fadeAlpha(to: 0.0, duration: duration)
+        let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: duration)
+        let blink = SKAction.sequence([faadeOut, fadeIn])
+        
+        return SKAction.repeatForever(blink)
     }
 }
