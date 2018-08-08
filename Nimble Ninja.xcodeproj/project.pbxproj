@@ -13,6 +13,7 @@
 		A2B0FEFF21199CA000E796E2 /* JBCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FEFE21199CA000E796E2 /* JBCloud.swift */; };
 		A2B0FF022119F0EE00E796E2 /* JBWallGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FF012119F0EE00E796E2 /* JBWallGenerator.swift */; };
 		A2B0FF042119F0F900E796E2 /* JBWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FF032119F0F900E796E2 /* JBWall.swift */; };
+		A2B0FF07211AD66000E796E2 /* JBPointsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0FF06211AD66000E796E2 /* JBPointsLabel.swift */; };
 		A2C15629210A2879008AE780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C15628210A2879008AE780 /* AppDelegate.swift */; };
 		A2C1562D210A2879008AE780 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2C1562C210A2879008AE780 /* Actions.sks */; };
 		A2C1562F210A2879008AE780 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1562E210A2879008AE780 /* GameScene.swift */; };
@@ -30,6 +31,7 @@
 		A2B0FEFE21199CA000E796E2 /* JBCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBCloud.swift; sourceTree = "<group>"; };
 		A2B0FF012119F0EE00E796E2 /* JBWallGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBWallGenerator.swift; sourceTree = "<group>"; };
 		A2B0FF032119F0F900E796E2 /* JBWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBWall.swift; sourceTree = "<group>"; };
+		A2B0FF06211AD66000E796E2 /* JBPointsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBPointsLabel.swift; sourceTree = "<group>"; };
 		A2C15625210A2879008AE780 /* Nimble Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nimble Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C15628210A2879008AE780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2C1562C210A2879008AE780 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A2C15628210A2879008AE780 /* AppDelegate.swift */,
 				A2C1562C210A2879008AE780 /* Actions.sks */,
 				A2C1562E210A2879008AE780 /* GameScene.swift */,
+				A2B0FF06211AD66000E796E2 /* JBPointsLabel.swift */,
 				A2CA1F69210AB2F8004327E4 /* JBMovingGround.swift */,
 				A2B0FF052119F10200E796E2 /* Wall Generation */,
 				A2B0FF0021199CA900E796E2 /* Cloud Generation */,
@@ -182,6 +185,7 @@
 				A2C1562F210A2879008AE780 /* GameScene.swift in Sources */,
 				A2C15631210A2879008AE780 /* GameViewController.swift in Sources */,
 				A2B0FEFD2119998A00E796E2 /* JBCloudGenerator.swift in Sources */,
+				A2B0FF07211AD66000E796E2 /* JBPointsLabel.swift in Sources */,
 				A2B0FEFF21199CA000E796E2 /* JBCloud.swift in Sources */,
 				A2B0FF022119F0EE00E796E2 /* JBWallGenerator.swift in Sources */,
 				A2603C13210C723A00009537 /* JBHero.swift in Sources */,

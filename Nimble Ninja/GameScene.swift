@@ -30,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addWallGenerator()
         addTapToStartLabel()
         addPhysicsWorld()
+        addPointsLabel()
     }
     
     func addMovingGround(){
@@ -74,6 +75,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapToStartLabel.fontSize = 22.0
         addChild(tapToStartLabel)
         tapToStartLabel.run(blinkAnimation())
+    }
+    
+    func addPointsLabel(){
+        let pointsLabel = JBPointsLabel(num: 0)
+        pointsLabel.position = CGPoint(x: 20.0, y: (view?.frame.height)! - 30)
+        addChild(pointsLabel)
+        
+        let highScoreLabel = JBPointsLabel(num: 0)
+        highScoreLabel.position = CGPoint(x: (view?.frame.width)! - 35, y: (view?.frame.height)! - 30)
+        addChild(highScoreLabel)
+        
+        let highScoreTextLabel = SKLabelNode(text: "High Score")
+        highScoreTextLabel.fontColor = UIColor.black
+        highScoreTextLabel.fontSize = 12.0
+        highScoreTextLabel.fontName = "Helvetica"
+        highScoreTextLabel.position = CGPoint(x: 0.0, y: -30.0)
+        highScoreLabel.addChild(highScoreTextLabel)
     }
     
     func addPhysicsWorld(){
