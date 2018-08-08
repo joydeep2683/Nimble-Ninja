@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isStarted = false
     var isGameOver = false
     
+    var currentLevel = 0
+    
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.init(red: 159.0/255.0, green: 201.0/255.0, blue: 244.0/255.0, alpha: 1.0)
         addMovingGround()
@@ -36,7 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addMovingGround(){
         //Add groud
-        movingGround = JBMovingGround(size: CGSize(width: (view?.frame.size.width)!, height: KJBGroundHeight))
+        movingGround = JBMovingGround(size: CGSize(width: (view?.frame.size.width)!, height: kJBGroundHeight))
         movingGround.position = CGPoint(x: 0, y: (view?.frame.height)! / CGFloat(2))
         addChild(movingGround)
     }
@@ -180,6 +182,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 wallGenerator.wallTracker.remove(at: 0)
                 let pointsLabel = childNode(withName: "pointsLabel") as! JBPointsLabel
                 pointsLabel.increment()
+                
+                if pointsLabel.number % kNumberOfPointsPerLevel == 0 {
+                    currentLevel += 1
+                    wallGenerator.stopGenerating()
+                    wallGenerator.startGeneratingWallsEvery(seconds: kLevelGenerationTimes[currentLevel])
+                }
             }
         }
     }

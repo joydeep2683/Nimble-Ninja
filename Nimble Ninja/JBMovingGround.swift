@@ -39,7 +39,7 @@ class JBMovingGround : SKSpriteNode{
         fatalError("init(coder:) has not been implemented") 
     }
     func start() {
-        let adjustedDuration = frame.size.width / KDefaultxToMovePerSecond
+        let adjustedDuration = frame.size.width / kDefaultxToMovePerSecond
         let moveLeft = SKAction.moveBy(x: -frame.size.width / 2, y: 0.0, duration: TimeInterval(adjustedDuration/2))
         let resetPosition = SKAction.moveTo(x: 0, duration: 0)
         let moveSequence = SKAction.sequence([moveLeft, resetPosition])

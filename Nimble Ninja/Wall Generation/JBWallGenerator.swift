@@ -34,7 +34,7 @@ class JBWallGenerator: SKSpriteNode {
         
         let wall = JBWall()
         wall.position.x = size.width/2 + wall.size.width/2
-        wall.position.y = scale*(KJBGroundHeight/2 + wall.size.height/2)
+        wall.position.y = scale*(kJBGroundHeight/2 + wall.size.height/2)
         walls.append(wall)
         wallTracker.append(wall)
         addChild(wall)

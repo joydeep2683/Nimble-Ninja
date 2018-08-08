@@ -98,7 +98,7 @@ class JBHero: SKSpriteNode {
         } else {
             scale = 1.0
         }
-        let translate = SKAction.moveBy(x: 0.0, y: scale*(size.height + KJBGroundHeight), duration: 0.1)
+        let translate = SKAction.moveBy(x: 0.0, y: scale*(size.height + kJBGroundHeight), duration: 0.1)
         let flip = SKAction.scaleY(to: scale, duration: 0.1)
         
         run(translate)
