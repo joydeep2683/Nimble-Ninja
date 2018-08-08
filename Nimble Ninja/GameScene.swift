@@ -24,45 +24,60 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.init(red: 159.0/255.0, green: 201.0/255.0, blue: 244.0/255.0, alpha: 1.0)
-        
+        addMovingGround()
+        addHero()
+        addCloudGenerator()
+        addWallGenerator()
+        addTapToStartLabel()
+        addPhysicsWorld()
+    }
+    
+    func addMovingGround(){
         //Add groud
-        movingGround = JBMovingGround(size: CGSize(width: view.frame.size.width, height: KJBGroundHeight))
-        movingGround.position = CGPoint(x: 0, y: view.frame.height / CGFloat(2))
+        movingGround = JBMovingGround(size: CGSize(width: (view?.frame.size.width)!, height: KJBGroundHeight))
+        movingGround.position = CGPoint(x: 0, y: (view?.frame.height)! / CGFloat(2))
         addChild(movingGround)
-        
+    }
+    
+    func addHero(){
         //Add hero
-        
         hero = JBHero()
         hero.position = CGPoint(x: 70.0, y: movingGround.position.y + movingGround.frame.size.height/2 + hero.frame.size.height/2)
         addChild(hero)
         hero.breathe()
-        
+    }
+    
+    func addCloudGenerator(){
         //Add cloud generator
-        cloudGenerator = JBCloudGenerator(color: UIColor.clear, size: view.frame.size)
-        cloudGenerator.position = view.center
+        cloudGenerator = JBCloudGenerator(color: UIColor.clear, size: (view?.frame.size)!)
+        cloudGenerator.position = (view?.center)!
         addChild(cloudGenerator)
         cloudGenerator.populate(num: 7)
         cloudGenerator.startGeneratingWithSpawnTime(seconds: 7)
-        
+    }
+    
+    func addWallGenerator(){
         // Add wall generator
-        wallGenerator = JBWallGenerator(color: UIColor.clear, size: view.frame.size)
-        wallGenerator.position = view.center
+        wallGenerator = JBWallGenerator(color: UIColor.clear, size: (view?.frame.size)!)
+        wallGenerator.position = (view?.center)!
         addChild(wallGenerator)
-        
+    }
+    
+    func addTapToStartLabel(){
         // Add Tap to start label
         let tapToStartLabel = SKLabelNode(text: "Tap to Start!")
         tapToStartLabel.name = "tapToStartLabel"
-        tapToStartLabel.position.x = view.center.x
-        tapToStartLabel.position.y = view.center.y + 40
+        tapToStartLabel.position.x = (view?.center.x)!
+        tapToStartLabel.position.y = (view?.center.y)! + 40
         tapToStartLabel.fontColor = UIColor.black
         tapToStartLabel.fontName = "Helvetica"
         tapToStartLabel.fontSize = 22.0
         addChild(tapToStartLabel)
-        
+    }
+    
+    func addPhysicsWorld(){
         // Add physics world
         physicsWorld.contactDelegate = self
-        
-        
     }
     
     // MARK: Game lifecycle
